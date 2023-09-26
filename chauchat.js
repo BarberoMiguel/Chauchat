@@ -1,26 +1,32 @@
 var cargador = [];
 
 function recargar(cargador) {
-    for (let i = 0; i < 7; i++) {
+    let balas = Number();
+    cargador.splice(0, 7);
+    do {
+        balas = Number(prompt("¿Cuántas balas quieres introducir en el cargador? (Máximo 7)"));
+    } while (balas > 7 || balas < 0);
+    for (let i = 0; i < balas; i++) {
         cargador[i] = "pium!"; 
     }
 }
 
 function chauchat(cargador) {
+    let rafaga = 1;
     for (let i = 0; i < cargador.length; i++) {
-        let rafaga = 1;
         if (Math.random() >= 0.8) {
             console.log("Illo, me he quedao pillá!");
             cargador.splice(0, i);
             break;
         } else {
             if (rafaga == 3) {
-                console.log(cargador[i]+"\n");
+                console.log(cargador[i]);
+                console.log("espacio");
                 cargador[i] = "";
-                console.log("\n");
                 rafaga = 1;
             }  else {
-                console.log(cargador[i]+"\n");
+                console.log(cargador[i]);
+                console.log("\n");
                 cargador[i] = "";
                 rafaga += 1;
             }
@@ -30,3 +36,4 @@ function chauchat(cargador) {
         }
     }
 }
+console.log("Escribir recargar(cargador) para recargar y chauchat(cargador) para disparar:");
