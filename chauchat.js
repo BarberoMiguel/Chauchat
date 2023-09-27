@@ -14,7 +14,7 @@ function recargar(cargador) {
 function chauchat(cargador) {
     let rafaga = 1;
     for (let i = 0; i < cargador.length; i++) {
-        if (Math.random() >= 0.8) {
+        if (Math.random() >= 0.2) {
             console.log("Illo, me he quedao pillá!");
             cargador.splice(0, i);
             break;
